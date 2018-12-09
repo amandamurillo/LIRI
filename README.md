@@ -24,13 +24,6 @@ npm i axios
 npm i moment
 ```
 
-```js
-require("dotenv").config();
-```
-    "dotenv": "^6.1.0",
-    "moment": "^2.22.2",
-    "node-spotify-api": "^1.0.7"
-
 ### Installing
 
 A step by step series of examples that tell you how to get a development env running
@@ -44,13 +37,7 @@ And repeat
 ```
 until finished
 ```
-
-End with an example of getting some data out of the system or using it for a little demo
-
-https://giphy.com/gifs/PoImSL1455eBEFvjij/html5
-
 ## Running the tests
-
 
 Possible commands are: 
 
@@ -59,27 +46,34 @@ Possible commands are:
 'movie-this'
 'do-what-it-says' 
 
+'concert-this' uses the Bandsintown API to retrieve all upcoming concerts for an artist entered in the search parameter. Each venue name, location, and date is provided for all results. Moment.js is used to format the date from the Bandsintown API.
 
-'concert-this' uses the Bandsintown API to retrieve all upcoming concerts for an artist that is searched. Each venue name, location, and date is provided for all results. Moment.js is used to format the date from the Bandsintown API.
+*node liri.js concert-this <artist-name>*
 
-Example 1: node liri.js concert-this the pixies
-Example 2: node liri.js concert-this drake
+<img width="689" alt="screen shot 2018-12-09 at 3 35 05 pm" src="https://user-images.githubusercontent.com/40437294/49704460-48e81380-fbc8-11e8-80ef-401876a0743b.png">
 
-'spotify-this-song' uses the Spotify API to retrieve data about the song entered in the search parameter. All song titles that contain the search parameter or parts of it are returned. The user will receive the artist, song name, a link to preview the song, and the album name for each result. If no search is entered, "The Sign" will be the song searched for. 
+'spotify-this-song' uses the Spotify API to retrieve data about the song entered in the search parameter. All song titles that contain the search parameter or parts of it are returned. The user will receive the artist, song name, a link to preview the song, and the album name for each result. If no song is entered, "The Sign" will be the song searched for. 
 
-Example 1: node liri.js spotify-this-song u got it bad
-Example 1: node liri.js spotify-this-song u got it bad
-Example 3: node liri.js spotify-this-song 
+*node liri.js spotify-this-song <song-name>*
 
-'movie-this' uses the OMDb API to retreive data about the movie entered in the search parameter. The result will include the title, release year, IMDb rating, Rotten Tomatoes rating, country or countries it was filmed in, langauge(s), plot, and actors in the film. If no search is entered, "mr nobody" will be the movie searched for.
+<img width="849" alt="screen shot 2018-12-09 at 3 07 45 pm" src="https://user-images.githubusercontent.com/40437294/49704483-89479180-fbc8-11e8-8320-39a3ac426c8b.png">
 
-Example 1: node liri.js movie-this halloween
-Example 2: node liri.js movie-this white chicks
-Example 3: node liri.js movie-this 
+<img width="668" alt="screen shot 2018-12-09 at 3 38 06 pm" src="https://user-images.githubusercontent.com/40437294/49704498-b431e580-fbc8-11e8-8421-303e88adee6e.png">
 
-'do-what-it-says' is a command that reads the random.txt file and executes the parameters inside of it. By default it is set to 'spotify-this-song,I Want It That Way'
+'movie-this' uses the OMDb API to retreive data about the movie entered in the search parameter. The result will include the title, release year, IMDb rating, Rotten Tomatoes rating, country or countries it was filmed in, langauge(s), plot, and actors in the film. If no search is entered, "mr nobody" will be the search parameter.
 
-Example 1: node liri.js do-what-it-says
+*node liri.js movie-this <movie-name>*
+
+<img width="1224" alt="screen shot 2018-12-09 at 3 08 22 pm" src="https://user-images.githubusercontent.com/40437294/49704585-9d3fc300-fbc9-11e8-918e-ccf263b4df36.png">
+
+<img width="1222" alt="screen shot 2018-12-09 at 3 45 54 pm" src="https://user-images.githubusercontent.com/40437294/49704597-ce1ff800-fbc9-11e8-8ba7-ec663ec154be.png">
+
+'do-what-it-says' is a command that reads the random.txt file and executes the parameters inside of it. By default, it is set to 'spotify-this-song,I Want It That Way'
+
+*node liri.js do-what-it-says*
+
+<img width="840" alt="screen shot 2018-12-09 at 3 13 09 pm" src="https://user-images.githubusercontent.com/40437294/49704631-35d64300-fbca-11e8-9511-2fb9f27ba4dd.png">
+
 
 ### Break down into end to end tests
 
