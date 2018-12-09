@@ -51,7 +51,7 @@ Possible commands are:
 
 <img width="849" alt="screen shot 2018-12-09 at 3 07 45 pm" src="https://user-images.githubusercontent.com/40437294/49704483-89479180-fbc8-11e8-8320-39a3ac426c8b.png">
 
-<img width="668" alt="screen shot 2018-12-09 at 3 38 06 pm" src="https://user-images.githubusercontent.com/40437294/49704498-b431e580-fbc8-11e8-8421-303e88adee6e.png">
+<img width="849" alt="screen shot 2018-12-09 at 3 38 06 pm" src="https://user-images.githubusercontent.com/40437294/49704498-b431e580-fbc8-11e8-8421-303e88adee6e.png">
 
 'movie-this' uses the OMDb API to retreive data about the movie entered in the search parameter. The result will include the title, release year, IMDb rating, Rotten Tomatoes rating, country or countries it was filmed in, langauge(s), plot, and actors in the film. If no search is entered, "mr nobody" will be the search parameter.
 
@@ -59,13 +59,13 @@ Possible commands are:
 
 <img width="1224" alt="screen shot 2018-12-09 at 3 08 22 pm" src="https://user-images.githubusercontent.com/40437294/49704585-9d3fc300-fbc9-11e8-918e-ccf263b4df36.png">
 
-<img width="1222" alt="screen shot 2018-12-09 at 3 45 54 pm" src="https://user-images.githubusercontent.com/40437294/49704597-ce1ff800-fbc9-11e8-8ba7-ec663ec154be.png">
+<img width="1224" alt="screen shot 2018-12-09 at 3 45 54 pm" src="https://user-images.githubusercontent.com/40437294/49704597-ce1ff800-fbc9-11e8-8ba7-ec663ec154be.png">
 
 'do-what-it-says' is a command that reads the random.txt file and executes the parameters inside of it. By default, it is set to 'spotify-this-song,I Want It That Way'
 
 *node liri.js do-what-it-says*
 
-<img width="840" alt="screen shot 2018-12-09 at 3 13 09 pm" src="https://user-images.githubusercontent.com/40437294/49704631-35d64300-fbca-11e8-9511-2fb9f27ba4dd.png">
+<img width="849" alt="screen shot 2018-12-09 at 3 13 09 pm" src="https://user-images.githubusercontent.com/40437294/49704631-35d64300-fbca-11e8-9511-2fb9f27ba4dd.png">
 
 
 ### Break down into end to end tests
