@@ -43,7 +43,7 @@ Possible commands are:
 
 *node liri.js concert-this <artist-name>*
 
-<img width="689" alt="screen shot 2018-12-09 at 3 35 05 pm" src="https://user-images.githubusercontent.com/40437294/49704460-48e81380-fbc8-11e8-80ef-401876a0743b.png">
+<img width="849" alt="screen shot 2018-12-09 at 3 35 05 pm" src="https://user-images.githubusercontent.com/40437294/49704460-48e81380-fbc8-11e8-80ef-401876a0743b.png">
 
 'spotify-this-song' uses the Spotify API to retrieve data about the song entered in the search parameter. All song titles that contain the search parameter or parts of it are returned. The user will receive the artist, song name, a link to preview the song, and the album name for each result. If no song is entered, "The Sign" will be the song searched for. 
 
