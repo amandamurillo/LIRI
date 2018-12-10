@@ -2,7 +2,7 @@
 
 LIRI is like iPhone's SIRI. However, while SIRI is a Speech Interpretation and Recognition Interface, LIRI is a Language Interpretation and Recognition Interface. LIRI is a command line node app that takes in parameters and gives you back data.
 
-LIRI will search Bands in Town for concerts, Spotify for songs, and OMDB for movies.
+LIRI will search Bandsintown for concerts, Spotify for songs, and OMDB for movies.
 
 
 ### Prerequisites
@@ -55,7 +55,7 @@ Possible commands are:
 
 `node liri.js movie-this <movie-name>`
  
-`movie-this` uses the OMDb API to retreive data about the movie entered in the search parameter. The result will include the title, release year, IMDb rating, Rotten Tomatoes rating, country or countries it was filmed in, langauge(s), plot, and actors in the film. If no search is entered, "Mr. Nobody" will be the search parameter.
+`movie-this` uses the OMDb API to retreive data about the movie entered in the search parameter. The result will include the title, release year, IMDb rating, Rotten Tomatoes rating, country or countries it was filmed in, langauge(s), plot, and actors in the film. If no search is entered, the search parameter will be set to "Mr. Nobody".
 
 <img width="1222" alt="screen shot 2018-12-09 at 4 09 34 pm" src="https://user-images.githubusercontent.com/40437294/49704904-cd896080-fbcd-11e8-9563-bb7afacd40ac.png">
 
@@ -65,7 +65,7 @@ Possible commands are:
 
 `node liri.js do-what-it-says`
 
-`do-what-it-says` is a command that reads the random.txt file and executes the parameters inside of it. By default, it is set to 'spotify-this-song, I Want It That Way'
+`do-what-it-says` is a command that reads the random.txt file and executes the parameters inside of it. By default, it is set to 'spotify-this-song, I Want It That Way'.
 
 <img width="1222" alt="screen shot 2018-12-09 at 4 10 49 pm" src="https://user-images.githubusercontent.com/40437294/49704916-f0b41000-fbcd-11e8-9e24-63b43dfaeb32.png">
 
