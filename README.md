@@ -39,6 +39,9 @@ Possible commands are:
  
 `concert-this` uses the Bandsintown API to retrieve all upcoming concerts for an artist entered in the search parameter. Each venue name, location, and date is provided for all results. Moment.js is used to format the date from the Bandsintown API.
 
+![](concert-this.mp4)
+
+
 <img width="1230" alt="screen shot 2018-12-09 at 4 05 24 pm" src="https://user-images.githubusercontent.com/40437294/49704882-8b601f00-fbcd-11e8-8584-ae9541ec2f93.png">
 
 ---
@@ -55,11 +58,9 @@ Possible commands are:
 
 `node liri.js movie-this <movie-name>`
  
-`movie-this` uses the OMDb API to retreive data about the movie entered in the search parameter. The result will include the title, release year, IMDb rating, Rotten Tomatoes rating, country or countries it was filmed in, langauge(s), plot, and actors in the film. If no search is entered, the search parameter will be set to "Mr. Nobody".
+`movie-this` uses the OMDb API to retreive data about the movie entered in the search parameter. The result will include the title, release year, IMDb rating, country or countries it was filmed in, langauge(s), plot, and actors in the film. If no search is entered, the search parameter will be set to "Mr. Nobody".
 
-<img width="1222" alt="screen shot 2018-12-09 at 4 09 34 pm" src="https://user-images.githubusercontent.com/40437294/49704904-cd896080-fbcd-11e8-9563-bb7afacd40ac.png">
-
-<img width="1222" alt="screen shot 2018-12-09 at 4 09 10 pm" src="https://user-images.githubusercontent.com/40437294/49704964-64561d00-fbce-11e8-876c-63aa9712c9fb.png">
+![](movie-this.gif)
 
 ---
 
