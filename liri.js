@@ -79,7 +79,6 @@ function movieThis(input) {
       console.log("Title: " + response.data.Title);
       console.log("Year: " + response.data.Year);
       console.log("IMDB Rating: " + response.data.imdbRating);
-      console.log("Rotten Tomatoes: " + response.data.Ratings[1]);
       console.log("Country: " + response.data.Country);
       console.log("Language: " + response.data.Language);
       console.log("Movie Plot: " + response.data.Plot);
@@ -90,7 +89,6 @@ function movieThis(input) {
 };
 
 function doIt() {
-  console.log("here")
   fs.readFile("random.txt", "utf8", function (error, data) {
     var arr = data.split(",");
     var task = arr[0];
@@ -126,7 +124,7 @@ function runLiri(whatToDo, input) {
   if (whatToDo === "movie-this") {
     movieThis(input);
   }
-  if (whatToDo === "do-what-it-says") {
+  if (whatToDo === "random") {
     doIt();
   }
 }
