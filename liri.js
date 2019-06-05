@@ -3,86 +3,79 @@ require("dotenv").config();
 
 var moment = require("moment");
 var axios = require("axios");
+var fs = require("fs");
+var chalk = require("chalk")
 var keys = require('./keys.js');
 var Spotify = require('node-spotify-api');
 var spotify = new Spotify(keys.spotify);
-var fs = require("fs");
 
 
 var whatToDo = process.argv[2];
 var input = process.argv.slice(3).join(" ");
 
-console.log(whatToDo);
-
-runLiri(whatToDo);
-
-function runLiri(whatToDo) {
-
-  if (whatToDo === "concert-this") {
-    concertThis(input);
-  }
-  if (whatToDo === "spotify-this-song") {
-    spotifyThis(input);
-  }
-  if (whatToDo === "movie-this") {
-    movieThis(input);
-  }
-  if (whatToDo === "do-what-it-says") {
-    doIt();
-  }
-}
-
+var getArtistNames = function(artist) {
+  return artist.name;
+};
 
 function concertThis(input) {
-
-  console.log(input);
   axios.get("https://rest.bandsintown.com/artists/" + input + "/events?app_id=codingbootcamp").then(
     function (response) {
 
-      // console.log("\n---------------------------------------------------\n")
-      // console.log(response.data);
       response.data.forEach(concert => {
+      console.log(chalk.yellow.bold("---------------------------------------------------"))
         console.log(concert.venue.name)
-        console.log(concert.venue.city + ", " + concert.venue.region)
-        console.log(concert.datetime)
-        console.log("---------------------------")
+        console.log(concert.venue.city + ", " + (concert.venue.region || concert.venue.country))
+        console.log(moment(concert.datetime).format("MM/DD/YYYY"));
+        // console.log(chalk.bgRed.boclld.blue("---------------------------"))
       })
-      // console.log("\n---------------------------------------------------\n")
     }
   );
 }
 
 
 function spotifyThis(input) {
-
   if (!input) {
     input = "The Sign";
   }
-  spotify.search({ type: 'track', query: input }, function (err, data) {
-    if (err) {
-      return console.log('Error occurred: ' + err);
-    }
-    console.log("\n---------------------------------------------------\n")
-    console.log("Artist: " + data.tracks.items[0].artists[0].name)
-    console.log("Song: " + data.tracks.items[0].name)
-    console.log("Preview: " + data.tracks.items[3].preview_url)
-    console.log("Album: " + data.tracks.items[0].album.name);
-    console.log("\n---------------------------------------------------\n")
 
-  });
+  spotify.search(
+  { 
+    type: 'track',
+    query: input 
+  },
+  function (err, data) {
+    if (err) {
+       console.log('Error occurred: ' + err);
+       return;
+    }
+
+    var songs = data.tracks.items;
+
+    for (var i = 0; i < songs.length; i++) {
+
+    console.log(chalk.blue.bold("---------------------------------------------------"))
+    console.log(i);
+    console.log("Artist(s): " + songs[i].artists.map(getArtistNames));
+    console.log("Song name: " + songs[i].name);
+    console.log("Preview song: " + songs[i].preview_url);
+    console.log("Album: " + songs[i].album.name);
+    // console.log(chalk.blue.bold("-----------------------------------"));
+
+    }
+  }
+  );
 }
 
 
 function movieThis(input) {
-
   if (!input) {
-    movie = "mr nobody";
+    input = "The Matrix";
   }
 
   axios.get("http://www.omdbapi.com/?t=" + input + "&y=&plot=short&apikey=trilogy").then(
     function (response) {
 
-      console.log("\n---------------------------------------------------\n")
+      console.log(chalk.green.bold("\n---------------------------------------------------\n"))
       console.log("Title: " + response.data.Title);
       console.log("Year: " + response.data.Year);
       console.log("IMDB Rating: " + response.data.imdbRating);
@@ -91,21 +84,16 @@ function movieThis(input) {
       console.log("Language: " + response.data.Language);
       console.log("Movie Plot: " + response.data.Plot);
       console.log("Actors: " + response.data.Actors);
-      console.log("\n---------------------------------------------------\n")
+      console.log(chalk.green.bold("\n---------------------------------------------------\n"))
     }
   )
 };
 
 function doIt() {
-
   fs.readFile("random.txt", "utf8", function (error, data) {
     var arr = data.split(",");
     var task = arr[0];
     var input = arr[1].split('"').join('');
-
-console.log(arr);
-console.log(task);
-console.log(input);
 
     if (error) {
       return console.log(error);
@@ -123,7 +111,25 @@ console.log(input);
 
   });
 }
+// MAIN PROCESS
+// =====================================
+
+function runLiri(whatToDo, input) {
+
+  if (whatToDo === "concert-this") {
+    concertThis(input);
+  }
+  if (whatToDo === "spotify-this-song") {
+    spotifyThis(input);
+  }
+  if (whatToDo === "movie-this") {
+    movieThis(input);
+  }
+  if (whatToDo === "do-what-it-says") {
+    doIt();
+  }
+}
 
 
-
+runLiri(whatToDo, input);
 
