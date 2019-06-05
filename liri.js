@@ -90,6 +90,7 @@ function movieThis(input) {
 };
 
 function doIt() {
+  console.log("here")
   fs.readFile("random.txt", "utf8", function (error, data) {
     var arr = data.split(",");
     var task = arr[0];
@@ -102,7 +103,7 @@ function doIt() {
     if (task === "concert-this"){
       concertThis(input);
     }
-    if (task === "spotify-this-song"){
+    if (task === "spotify-this"){
       spotifyThis(input);
     }
     if (task === "movie-this"){
@@ -119,7 +120,7 @@ function runLiri(whatToDo, input) {
   if (whatToDo === "concert-this") {
     concertThis(input);
   }
-  if (whatToDo === "spotify-this-song") {
+  if (whatToDo === "spotify-this") {
     spotifyThis(input);
   }
   if (whatToDo === "movie-this") {
