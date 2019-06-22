@@ -9,4 +9,4 @@ exports.spotify = {
 //node liri.js spotify-this i wanna dance with somebody
 //node liri.js concert-this ariana grande
 //node liri.js movie-this white chicks
-//node liri.js random-this
+//node liri.js random
